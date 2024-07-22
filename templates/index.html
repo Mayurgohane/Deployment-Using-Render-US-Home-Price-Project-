@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Prediction</title>
+</head>
+<body>
+    <div>
+        <h2>Enter Features for Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="Interest_Rates">Interest Rates:</label>
+            <input type="text" id="Interest_Rates" name="Interest_Rates"><br><br>
+            <label for="Unemployment_Rate">Unemployment Rate:</label>
+            <input type="text" id="Unemployment_Rate" name="Unemployment_Rate"><br><br>
+            <label for="CPI">CPI:</label>
+            <input type="text" id="CPI" name="CPI"><br><br>
+            <label for="GDP_Growth">GDP Growth:</label>
+            <input type="text" id="GDP_Growth" name="GDP_Growth"><br><br>
+            <label for="Population_Growth">Population Growth:</label>
+            <input type="text" id="Population_Growth" name="Population_Growth"><br><br>
+            <label for="Median_Income">Median Income:</label>
+            <input type="text" id="Median_Income" name="Median_Income"><br><br>
+            <label for="Consumer_Confidence">Consumer Confidence:</label>
+            <input type="text" id="Consumer_Confidence" name="Consumer_Confidence"><br><br>
+            <input type="submit" value="Predict">
+        </form>
+        {% if ridge_prediction_text %}
+        <h3>{{ ridge_prediction_text }}</h3>
+        {% endif %}
+        {% if lasso_prediction_text %}
+        <h3>{{ lasso_prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
